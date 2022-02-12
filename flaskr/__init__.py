@@ -1,7 +1,10 @@
 import os
 from os import environ
+from tokenize import String
 from flask import Flask
+from flask import request
 import redis
+import json
 
 def create_app(test_config=None):
     # create and configure the app'
@@ -35,6 +38,13 @@ def create_app(test_config=None):
 
     @app.route('/data')
     def data():
-        return '0'
+        try:
+            id = request.args.get('id')
+            data = r.get(id)
+            data_json = json.loads(data)
+            return data_json
+        except:
+            error_result = {'depression_stats':99999,"student_to_mh_ratio":99999, "investment_into_mh":99999,"cost_of_living_and_debt":99999,"suicide_rate":99999}
+            return json.dumps(error_result)
         
     return app
