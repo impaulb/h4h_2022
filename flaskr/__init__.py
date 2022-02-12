@@ -30,3 +30,18 @@ def create_app(test_config=None):
         return 'Hello, World!'
 
     return app
+    
+    @app.route('/data')
+    def data():
+        int depression_rate
+        int suicide_rate
+
+    @app.route('/colleges')
+    def colleges(collegelist):
+        str collegeID = ("")
+        return "List of colleges is:" + collegelist
+
+    @app.route('/investment')
+    def investment():
+        int investment_amount
+        
