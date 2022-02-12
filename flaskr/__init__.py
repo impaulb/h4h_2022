@@ -35,6 +35,7 @@ def create_app(test_config=None):
     def data():
         int depression_rate
         int suicide_rate
+        int student_to_depression_ratio
 
     @app.route('/colleges')
     def colleges(collegelist):
@@ -44,4 +45,11 @@ def create_app(test_config=None):
     @app.route('/investment')
     def investment():
         int investment_amount
+        int planned_investment
+        
+    @app.route('/debt')
+    def debt():
+        int debt_amount
+        int cost_of_living
+    
         
