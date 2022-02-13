@@ -9,19 +9,14 @@ from firebase_admin import firestore
 import os
 
 app = Flask(__name__)
-firebase_admin.initialize_app(credentials.Certificate("key.json"))
+firebase_admin.initialize_app(credentials.Certificate(os.environ['key']))
 @app.route('/')
 def hello_world():
-    file = open("env.txt","r")
-    env_vars = file.readlines()
-    
     r = redis.Redis(
-        host = env_vars[0][:-1],
-        port = int(env_vars[1][:-1]),
-        password = env_vars[2]
+        host = os.environ['endpoint'],
+        port = int(os.environ['port']),
+        password = os.environ['password']
     )
-    
-    file.close()
     
     try:
         id = request.args.get('id')
