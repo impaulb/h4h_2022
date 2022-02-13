@@ -1,11 +1,15 @@
+from tokenize import String
 from flask import Flask
 from flask import request
 import redis
 import json
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 import os
 
 app = Flask(__name__)
-
+firebase_admin.initialize_app(credentials.Certificate("key.json"))
 @app.route('/')
 def hello_world():
     file = open("env.txt","r")
@@ -27,3 +31,34 @@ def hello_world():
     except:
         error_result = {'depression_stats':99999,"student_to_mh_ratio":99999, "investment_into_mh":99999,"cost_of_living_and_debt":99999,"suicide_rate":99999}
         return json.dumps(error_result)
+
+@app.route('/ratings')
+def ratings():
+    f = firestore.client()
+    
+    users_ref = f.collection(u'h4h')
+    docs = users_ref.stream()
+
+    try:
+        id = request.args.get('id')
+    except:
+        id = 1
+
+    sum = 0
+    n = 0
+
+    for doc in docs:
+        if(doc.id == id):
+            sum+=doc
+    
+    # try:
+    #     id = request.args.get('id')
+    #     sum = 0
+    #     n=0
+    #     for snap in f:
+    #         if(snap['id'] == int(id)):
+    #             sum+=snap['rating']
+    #             n+=1
+    #     return String(sum/n)
+    # except:
+    #     return "5"
