@@ -43,11 +43,8 @@ def ratings():
     n = 0
 
     for doc in docs:
-        if(str(doc.id) == id):
-            sum+=doc
+        if(str(doc.get('id')) == id):
+            sum+=doc.get('rating')
             n+=1
             
-    try:
-        return String(sum/n)
-    except:
-        return "5"
+    return str(sum/n)
