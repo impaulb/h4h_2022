@@ -16,6 +16,7 @@
   h2{
     font-family: bely-display, sans-serif;
     font-size: 50px;
+    letter-spacing: 3px;
   }
   
   h3{
@@ -26,10 +27,11 @@
   }
   
   h4{
-    font-family:'Helvetica';
-    font-size: 30px;
+    font-family:bely-display, sans-serif;
+    font-size: 15px;
     top: 20px;
     left: 40px;
+    letter-spacing: 3px;
   }
   .styled {
     border: 0;
@@ -44,6 +46,11 @@
 .hack{
     position:absolute;
 }
+
+.text-center {
+    text-align: center;
+  }
+
   
  
   
