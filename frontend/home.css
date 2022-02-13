@@ -1,0 +1,58 @@
+body{
+    font-family: 'Montserrat';
+    color: #000000;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 175%;
+  }
+  
+  h1{
+    color: inherit;
+    font-family: bely-display, sans-serif;
+    font-size: 60px;
+    letter-spacing: 3px;
+  }
+  
+  h2{
+    font-family: bely-display, sans-serif;
+    font-size: 50px;
+    letter-spacing: 3px;
+  }
+  
+  h3{
+    font-family: bely-display, sans-serif;
+    font-size: 40px;
+    top: 20px;
+    left: 40px;
+  }
+  
+  h4{
+    font-family:bely-display, sans-serif;
+    font-size: 20px;
+    top: 20px;
+    left: 40px;
+    letter-spacing: 3px;
+  }
+  h5{
+    font-family:bely-display, sans-serif;
+    font-size: 15px;
+    top: 20px;
+    left: 40px;
+  }
+  .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(95, 141, 114, 0.6);
+}
+.hack{
+    position:absolute;
+}
+
+.text-center {
+    text-align: center;
+  }
