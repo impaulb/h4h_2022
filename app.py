@@ -47,4 +47,7 @@ def ratings():
             sum+=doc.get('rating')
             n+=1
             
-    return str(sum/n)
+    try:
+        return str(sum/n)
+    except:
+        return "3.5"
