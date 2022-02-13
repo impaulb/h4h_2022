@@ -45,15 +45,9 @@ def ratings():
     for doc in docs:
         if(doc.id == id):
             sum+=doc
-    
-    # try:
-    #     id = request.args.get('id')
-    #     sum = 0
-    #     n=0
-    #     for snap in f:
-    #         if(snap['id'] == int(id)):
-    #             sum+=snap['rating']
-    #             n+=1
-    #     return String(sum/n)
-    # except:
-    #     return "5"
+            n+=1
+            
+    try:
+        return String(sum/n)
+    except:
+        return 5
