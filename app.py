@@ -50,4 +50,4 @@ def ratings():
     try:
         return String(sum/n)
     except:
-        return 5
+        return "5"
