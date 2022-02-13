@@ -9,7 +9,7 @@ from firebase_admin import firestore
 import os
 
 app = Flask(__name__)
-firebase_admin.initialize_app(credentials.Certificate(json.loads(os.environ['key'])).to_dict())
+firebase_admin.initialize_app(credentials.Certificate(json.loads(os.environ['key']).to_dict()))
 @app.route('/')
 def hello_world():
     r = redis.Redis(
