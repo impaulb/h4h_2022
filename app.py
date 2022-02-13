@@ -43,7 +43,7 @@ def ratings():
     n = 0
 
     for doc in docs:
-        if(doc.id == id):
+        if(String(doc.id) == id):
             sum+=doc
             n+=1
             
